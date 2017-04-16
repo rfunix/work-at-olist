@@ -11,7 +11,7 @@ class Channel(models.Model):
 class Category(models.Model):
     parent = models.ForeignKey("self", null=True)
     name = models.CharField(max_length=30)
-    channel = models.ForeignKey(Channel, on_delete=models.CASCADE)
+    channel = models.ForeignKey(Channel)
 
     class Meta:
         db_table = "Category"
