@@ -84,7 +84,7 @@ DATABASES = {
         # 'NAME': os.path.join(BASE_DIR, 'mydb'),
         'USER': 'fghseavjfdlrro',
         'PASSWORD': 'mypassword',
-        'HOST': 'ec2-54-243-185-123.compute-1.amazonaws.com',
+        'HOST': 'xxxxx',
         'PORT': '5432',  # 8000 is default
     }
 }
