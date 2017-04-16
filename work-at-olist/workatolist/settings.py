@@ -66,14 +66,26 @@ WSGI_APPLICATION = 'workatolist.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'workatolist',
+#         'USER': 'root',
+#         'PASSWORD': '',
+#         'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
+#         'PORT': '3306',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'workatolist',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
-        'PORT': '3306',
+        'ENGINE': 'ec2-54-243-185-123.compute-1.amazonaws.com',
+        'NAME': 'd6qif4r5hms7fr',
+        # 'NAME': os.path.join(BASE_DIR, 'mydb'),
+        'USER': 'fghseavjfdlrro',
+        'PASSWORD': 'mypassword',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',  # 8000 is default
     }
 }
 
