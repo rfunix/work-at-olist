@@ -1,4 +1,5 @@
 import os
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -78,16 +79,10 @@ WSGI_APPLICATION = 'workatolist.wsgi.application'
 # }
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd6qif4r5hms7fr',
-        # 'NAME': os.path.join(BASE_DIR, 'mydb'),
-        'USER': 'fghseavjfdlrro',
-        'PASSWORD': 'mypassword',
-        'HOST': 'xxxxx',
-        'PORT': '5432',  # 8000 is default
-    }
 }
+
+DATABASES['default'] = dj_database_url.parse(
+    os.environ.get("DATABASE_URL"), conn_max_age=600)
 
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
