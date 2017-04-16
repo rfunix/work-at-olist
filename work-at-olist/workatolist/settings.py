@@ -79,12 +79,12 @@ WSGI_APPLICATION = 'workatolist.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'ec2-54-243-185-123.compute-1.amazonaws.com',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'd6qif4r5hms7fr',
         # 'NAME': os.path.join(BASE_DIR, 'mydb'),
         'USER': 'fghseavjfdlrro',
         'PASSWORD': 'mypassword',
-        'HOST': '127.0.0.1',
+        'HOST': 'ec2-54-243-185-123.compute-1.amazonaws.com',
         'PORT': '5432',  # 8000 is default
     }
 }
