@@ -11,7 +11,8 @@ class Channel(models.Model):
 
 class Category(MPTTModel):
     parent = TreeForeignKey('self', null=True, blank=True,
-                            db_index=True, default=None)
+                            db_index=True, default=None,
+                            related_name='children')
     name = models.CharField(max_length=30)
     channel = models.ForeignKey(Channel, related_name='categories')
 
@@ -20,6 +21,3 @@ class Category(MPTTModel):
 
     class MPTTMeta:
         order_insertion_by = ['name']
-
-    def __str__(self):
-        return '%d: %s' % (self.id, self.name)
