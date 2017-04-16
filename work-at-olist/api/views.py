@@ -22,4 +22,4 @@ class CategoriesView(generics.ListAPIView):
 
     def get_queryset(self):
         return models.Category.objects.filter(
-            name=self.kwargs['name']).get_ancestors(include_self=True)
+            name=self.kwargs['name']).get_ancestors(include_self=False)
