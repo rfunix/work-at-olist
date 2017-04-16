@@ -11,8 +11,8 @@ class ChannelSerializer(serializers.ModelSerializer):
 
 
 class CategoriesSerializer(serializers.ModelSerializer):
-    parent = RecursiveField(allow_null=True)
+    children = RecursiveField(required=True, allow_null=True, many=True)
 
     class Meta:
         model = models.Category
-        fields = ('name', 'parent')
+        fields = ('name', 'children')
