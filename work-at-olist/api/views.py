@@ -1,9 +1,6 @@
 from rest_framework import viewsets, generics
 from workatolist import models
 from api import serializers
-import operator
-from django.db.models import Q
-import functools
 
 
 class ChannelListViewSet(viewsets.ModelViewSet):
