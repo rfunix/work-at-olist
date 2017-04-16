@@ -27,7 +27,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'workatolist',
     'rest_framework',
-    "api"
+    "api",
+    "mptt"
 ]
 
 MIDDLEWARE_CLASSES = [
