@@ -1,11 +1,11 @@
 
-#### How to import Channels and Categories:
+## How to import Channels and Categories:
 
 ```text
 python work-at-olist/manage.py importcategories {channel_name} {csv_file_path}
 ```
 
-##### e.g.
+#### e.g.
 
 ```
 python work-at-olist/manage.py importcategories walmart test.csv
