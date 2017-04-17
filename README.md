@@ -148,3 +148,181 @@ $ python manage.py importcategories walmart categories.csv
 - Practice the [12 Factor-App](http://12factor.net) concepts.
 - Make small and atomic commits, with clear messages (written in English).
 - Use good programming practices.
+
+## Api Endpoints:
+
+
+#### List Channels.
+
+```text
+GET /api/channels/
+```
+##### Response:
+
+```json
+[
+    {
+        "id": 1,
+        "name": "walmart"
+    }
+]
+```
+
+#### List all categories and subcategories of a channel.
+
+```text
+GET /api/channel-categories/{channel-name}/
+```
+
+##### Response:
+
+```json
+[
+    {
+        "name": "Auto",
+        "children": [
+            {
+                "name": "Cars",
+                "children": [
+                    {
+                        "name": "Motor",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Books",
+        "children": [
+            {
+                "name": "Computers",
+                "children": [
+                    {
+                        "name": "Applications",
+                        "children": []
+                    },
+                    {
+                        "name": "Database",
+                        "children": []
+                    },
+                    {
+                        "name": "Programming",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "name": "Foreign Literature",
+                "children": []
+            },
+            {
+                "name": "National Literature",
+                "children": [
+                    {
+                        "name": "Fiction Fantastic",
+                        "children": []
+                    },
+                    {
+                        "name": "Science Fiction",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Computers",
+        "children": [
+            {
+                "name": "Desktop",
+                "children": []
+            },
+            {
+                "name": "Notebooks",
+                "children": []
+            },
+            {
+                "name": "Tablets",
+                "children": []
+            }
+        ]
+    },
+    {
+        "name": "Games",
+        "children": [
+            {
+                "name": "Playstation 4",
+                "children": []
+            },
+            {
+                "name": "XBOX 360",
+                "children": [
+                    {
+                        "name": "Accessories",
+                        "children": [
+                            {
+                                "name": "Controller",
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Console",
+                        "children": []
+                    },
+                    {
+                        "name": "Games",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "name": "XBOX One",
+                "children": [
+                    {
+                        "name": "Accessories",
+                        "children": []
+                    },
+                    {
+                        "name": "Console",
+                        "children": []
+                    },
+                    {
+                        "name": "Games",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    }
+]
+```
+
+#### Return a single category with their parent categories and subcategories.
+
+```text
+GET /api/category/{category}/
+```
+
+##### Response:
+
+```json
+[
+    {
+        "name": "Auto",
+        "children": [
+            {
+                "name": "Cars",
+                "children": [
+                    {
+                        "name": "Motor",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    }
+]
+```
+
