@@ -39,6 +39,12 @@ GET /api/channels/
 GET /api/channel-categories/{channel-name}/
 ```
 
+##### e.g.
+
+```text
+GET /api/channel-categories/walmart/
+```
+
 ##### Response:
 
 ```json
@@ -168,6 +174,12 @@ GET /api/channel-categories/{channel-name}/
 
 ```text
 GET /api/category/{category}/
+```
+
+##### e.g.
+
+```text
+GET /api/category/Cars/
 ```
 
 ##### Response:
