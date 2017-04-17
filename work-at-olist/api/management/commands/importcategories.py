@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand, CommandError
-from workatolist.models import Channel, Category
+from api.models import Channel, Category
 import csv
 
 
