@@ -1,5 +1,5 @@
 from rest_framework import viewsets, generics
-from . import models
+from api import models
 from api import serializers
 
 
