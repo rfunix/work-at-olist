@@ -1,4 +1,19 @@
 
+#### How to import Channels and Categories:
+
+```text
+python work-at-olist/manage.py importcategories {channel_name} {csv_file_path}
+```
+
+##### e.g.
+
+```
+python work-at-olist/manage.py importcategories walmart test.csv
+```
+
+##### Observation: This csv file must have the "/" separator character.
+
+
 ## Api Endpoints:
 
 
