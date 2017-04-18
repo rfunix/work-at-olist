@@ -1,6 +1,7 @@
 from rest_framework import viewsets, generics
 from api import models
 from api import serializers
+from itertools import chain
 
 
 class ChannelListViewSet(viewsets.ModelViewSet):
@@ -21,5 +22,7 @@ class CategoriesView(generics.ListAPIView):
     serializer_class = serializers.CategoriesSerializer
 
     def get_queryset(self):
-        return models.Category.objects.filter(
-            name=self.kwargs['name']).get_ancestors(include_self=False)
+        ancestors = models.Category.objects.filter(
+            name=self.kwargs['name']).get_ancestors(
+            include_self=True)
+        return ancestors[:1]
