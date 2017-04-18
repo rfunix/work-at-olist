@@ -1,5 +1,7 @@
 import os
 import dj_database_url
+from prettyconf import config
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -9,14 +11,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'ld7s4bcrf)mso_*y^mnnfrr=fh&)4gs$*e%-acjxw5nyulpioz'
+SECRET_KEY = config('SECRET_KEY', default='EURECA')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = config('DEBUG', default=False, cast=config.boolean)
 
-ALLOWED_HOSTS = ["agile-headland-13957.herokuapp.com",
-                 "localhost", "127.0.0.1"]
-
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', default=['*'], cast=config.list)
 
 # Application definition
 
