@@ -19,7 +19,7 @@
 5. Edit local.env file with your configurations.
 6. Export env variables e.g. export $(cat local.env | xargs)
 7. Run migration for create database tables e.g. python3.6 work-at-olist/manage.py migrate
-8. Import Channel and Categories using test.csv file e.g. python work-at-olist/manage.py importcategories walmart test.csv
+8. Import Channel and Categories using test.csv file e.g. python3.6 work-at-olist/manage.py importcategories walmart test.csv
 9. Start Api: python work-at-olist/manage.py runserver
 
 
