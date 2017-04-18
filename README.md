@@ -1,6 +1,25 @@
 # Work at Olist
 
-## Running Heroku Api Host -> https://agile-headland-13957.herokuapp.com
+## Api Host -> https://agile-headland-13957.herokuapp.com
+
+## How to locally running
+
+### Requirements:
+* Python3.5 + [https://www.python.org/]
+* VirtualEnv
+* Python PIP
+* PostgreSQL [https://www.postgresql.org/]
+
+### Steps:
+
+1. Clone this repository
+2. Create virtualenv using python 3.5 + e.g. virtualenv -p python3.5 envname
+3. Install python dependencies: pip install -r requirements-local.txt
+4. Create database.
+5. Edit local.env file with your configurations.
+6. Export env variables e.g. export $(cat local.env | xargs)
+7. Start Api: python work-at-olist/manage.py runserver
+
 
 ## How to import Channels and Categories:
 
