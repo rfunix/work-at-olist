@@ -18,6 +18,7 @@
 4. Create database.
 5. Edit local.env file with your configurations.
 6. Export env variables e.g. export $(cat local.env | xargs)
+7. Run migration for create database tables e.g. python3.6 work-at-olist/manage.py migrate
 7. Start Api: python work-at-olist/manage.py runserver
 
 
