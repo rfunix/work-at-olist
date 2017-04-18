@@ -7,7 +7,7 @@ class ChannelSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.Channel
-        fields = ('id', 'name')
+        fields = ('name')
 
 
 class CategoriesSerializer(serializers.ModelSerializer):
