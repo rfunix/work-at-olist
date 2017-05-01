@@ -13,7 +13,7 @@ class ChannelListCategories(generics.ListAPIView):
     serializer_class = serializers.CategoriesSerializer
 
     def get_queryset(self):
-        channel = models.Channel.objects.filter(name=self.kwargs['name'])
+        channel = models.Channel.objects.filter(slug=self.kwargs['slug'])
         return models.Category.objects.filter(channel=channel,
                                               level=0)
 
@@ -23,6 +23,6 @@ class CategoriesView(generics.ListAPIView):
 
     def get_queryset(self):
         ancestors = models.Category.objects.filter(
-            name=self.kwargs['name']).get_ancestors(
+            slug=self.kwargs['slug']).get_ancestors(
             include_self=True)
         return ancestors[:1]
