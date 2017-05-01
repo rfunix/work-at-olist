@@ -8,6 +8,8 @@ class Channel(models.Model):
     class Meta:
         db_table = "Channel"
 
+    def __str__(self):
+        return self.name
 
 class Category(MPTTModel):
     parent = TreeForeignKey('self', null=True, blank=True,
@@ -15,6 +17,9 @@ class Category(MPTTModel):
                             related_name='children')
     name = models.CharField(max_length=30)
     channel = models.ForeignKey(Channel, related_name='categories')
+
+    def __str__(self):
+        return ("%s:%s:%s" % (self.channel.name, self.name, self.parent.name))
 
     class Meta:
         db_table = "Category"
