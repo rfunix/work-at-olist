@@ -1,6 +1,6 @@
 import tempfile
 import csv
-from django.core.management import call_command, CommandError
+from django.core.management import call_command
 import os
 from api import models
 from django.test import TestCase
