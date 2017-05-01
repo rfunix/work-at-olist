@@ -37,7 +37,6 @@ class Command(BaseCommand):
                 yield row
 
     def create_category(self, category, parent_category, channel):
-        print(category, parent_category)
         obj, created = Category.objects.update_or_create(
             name=category,
             parent=parent_category,
