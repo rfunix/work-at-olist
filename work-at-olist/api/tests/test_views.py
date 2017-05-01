@@ -28,12 +28,12 @@ class ChannelListCategoriesViewSetTest(BaseViewTest):
     def test_list_categories(self):
         response = self.client.get('/api/channel-categories/test/')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(len(response.data[0]), 2)
+        self.assertEqual(len(response.data[0]), 3)
 
 
 class CategoriesViewTest(BaseViewTest):
 
     def test_categories(self):
-        response = self.client.get('/api/category/Cars/')
+        response = self.client.get('/api/category/cars/')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(len(response.data[0]), 2)
+        self.assertEqual(len(response.data[0]), 3)

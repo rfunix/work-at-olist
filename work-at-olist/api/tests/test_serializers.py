@@ -14,7 +14,7 @@ def create_category(channel, category, parent_category):
 class ChannelSerializerTest(TestCase):
 
     def test_create(self):
-        expected = {'name': 'test'}
+        expected = {'name': 'test', 'slug': 'test'}
 
         channel = models.Channel.objects.create(name='test')
         serializer = serializers.ChannelSerializer(
@@ -29,9 +29,11 @@ class CategoriesSerializerTest(TestCase):
     def test_create(self):
         expected = {
             "name": "Auto",
+            "slug": "auto",
             "children": [
                 {
                     "name": "Cars",
+                    "slug": "cars",
                     "children": []
                 }
             ]
