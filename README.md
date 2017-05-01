@@ -56,7 +56,8 @@ GET /api/channels/
 ```json
 [
     {
-        "name": "walmart"
+        "name": "Magazine Luiza",
+        "slug": "magazine-luiza"
     }
 ]
 ```
@@ -64,13 +65,13 @@ GET /api/channels/
 #### List all categories and subcategories of a channel.
 
 ```text
-GET /api/channel-categories/{channel-name}/
+GET /api/channel-categories/{channel-slug}/
 ```
 
 ##### e.g.
 
 ```text
-GET /api/channel-categories/walmart/
+GET /api/channel-categories/magazine-luiza/
 ```
 
 ##### Response:
@@ -79,12 +80,15 @@ GET /api/channel-categories/walmart/
 [
     {
         "name": "Auto",
+        "slug": "auto",
         "children": [
             {
                 "name": "Cars",
+                "slug": "cars",
                 "children": [
                     {
                         "name": "Motor",
+                        "slug": "motor",
                         "children": []
                     }
                 ]
@@ -93,37 +97,46 @@ GET /api/channel-categories/walmart/
     },
     {
         "name": "Books",
+        "slug": "books",
         "children": [
             {
                 "name": "Computers",
+                "slug": "computers",
                 "children": [
                     {
                         "name": "Applications",
+                        "slug": "applications",
                         "children": []
                     },
                     {
                         "name": "Database",
+                        "slug": "database",
                         "children": []
                     },
                     {
                         "name": "Programming",
+                        "slug": "programming",
                         "children": []
                     }
                 ]
             },
             {
                 "name": "Foreign Literature",
+                "slug": "foreign-literature",
                 "children": []
             },
             {
                 "name": "National Literature",
+                "slug": "national-literature",
                 "children": [
                     {
                         "name": "Fiction Fantastic",
+                        "slug": "fiction-fantastic",
                         "children": []
                     },
                     {
                         "name": "Science Fiction",
+                        "slug": "science-fiction",
                         "children": []
                     }
                 ]
@@ -132,63 +145,78 @@ GET /api/channel-categories/walmart/
     },
     {
         "name": "Computers",
+        "slug": "computers",
         "children": [
             {
                 "name": "Desktop",
+                "slug": "desktop",
                 "children": []
             },
             {
                 "name": "Notebooks",
+                "slug": "notebooks",
                 "children": []
             },
             {
                 "name": "Tablets",
+                "slug": "tablets",
                 "children": []
             }
         ]
     },
     {
         "name": "Games",
+        "slug": "games",
         "children": [
             {
                 "name": "Playstation 4",
+                "slug": "playstation-4",
                 "children": []
             },
             {
                 "name": "XBOX 360",
+                "slug": "xbox-360",
                 "children": [
                     {
                         "name": "Accessories",
+                        "slug": "accessories",
                         "children": [
                             {
                                 "name": "Controller",
+                                "slug": "controller",
                                 "children": []
                             }
                         ]
                     },
                     {
                         "name": "Console",
+                        "slug": "console",
                         "children": []
                     },
                     {
                         "name": "Games",
+                        "slug": "games",
                         "children": []
                     }
                 ]
             },
             {
                 "name": "XBOX One",
+                "slug": "xbox-one",
                 "children": [
                     {
                         "name": "Accessories",
+                        "slug": "accessories",
                         "children": []
                     },
                     {
                         "name": "Console",
+                        "slug": "console",
                         "children": []
                     },
                     {
                         "name": "Games",
+                        "slug": "games",
                         "children": []
                     }
                 ]
@@ -201,27 +229,30 @@ GET /api/channel-categories/walmart/
 #### Return a single category with their parent categories and subcategories.
 
 ```text
-GET /api/category/{category}/
+GET /api/category/{category-slug}/
 ```
 
 ##### e.g.
 
 ```text
-GET /api/category/Cars/
+GET /api/category/cars/
 ```
 
 ##### Response:
 
 ```json
 [
-    {
+   {
         "name": "Auto",
+        "slug": "auto",
         "children": [
             {
                 "name": "Cars",
+                "slug": "cars",
                 "children": [
                     {
                         "name": "Motor",
+                        "slug": "motor",
                         "children": []
                     }
                 ]
