@@ -18,8 +18,6 @@ class Channel(models.Model):
             self.slug = slugify(self.name)
 
         super(Channel, self).save(*args, **kwargs)
-            
-
 
 
 class Category(MPTTModel):
@@ -38,10 +36,9 @@ class Category(MPTTModel):
 
     class MPTTMeta:
         order_insertion_by = ['name']
-        
+
     def save(self, *args, **kwargs):
         if not self.id:
             self.slug = slugify(self.name)
 
         super(Category, self).save(*args, **kwargs)
-
