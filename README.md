@@ -22,6 +22,11 @@
 8. Import Channel and Categories using test.csv file e.g. python3.6 work-at-olist/manage.py importcategories walmart test.csv
 9. Start Api: python work-at-olist/manage.py runserver
 
+## How to run tests:
+
+```text
+python3.6 work-at-olist/manage.py test api
+```
 
 ## How to import Channels and Categories:
 
@@ -51,7 +56,6 @@ GET /api/channels/
 ```json
 [
     {
-        "id": 1,
         "name": "walmart"
     }
 ]
