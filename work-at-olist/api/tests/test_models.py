@@ -1,9 +1,11 @@
 from django.test import TestCase
 from api import models
 
+
 def create_channel(name):
 
     return models.Channel.objects.create(name=name)
+
 
 def create_category(channel, category, parent_category):
 
@@ -13,6 +15,7 @@ def create_category(channel, category, parent_category):
             channel=channel
         )
 
+
 class ChannelTest(TestCase):
 
     def test_str(self):
@@ -20,6 +23,7 @@ class ChannelTest(TestCase):
         name = 'test_channel'
         channel = create_channel(name)
         self.assertEqual(channel.__str__(), name)
+
 
 class CategoryTest(TestCase):
 

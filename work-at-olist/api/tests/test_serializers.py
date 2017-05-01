@@ -10,6 +10,7 @@ def create_category(channel, category, parent_category):
             channel=channel
         )
 
+
 class ChannelSerializerTest(TestCase):
 
     def test_create(self):
@@ -21,6 +22,7 @@ class ChannelSerializerTest(TestCase):
         )
 
         self.assertEqual(serializer.data, expected)
+
 
 class CategoriesSerializerTest(TestCase):
 
@@ -38,7 +40,7 @@ class CategoriesSerializerTest(TestCase):
         channel = models.Channel.objects.create(name='test_categories')
         parent_category, _ = create_category(channel, "Auto",
                                              None)
-        category, _ = create_category(channel, "Cars", parent_category) 
+        category, _ = create_category(channel, "Cars", parent_category)
         serializer = serializers.CategoriesSerializer(
             parent_category, context={'request': None}
         )

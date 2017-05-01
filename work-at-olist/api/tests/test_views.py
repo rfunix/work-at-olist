@@ -3,6 +3,7 @@ from rest_framework.test import APIClient
 from rest_framework import status
 from api import models
 
+
 class BaseViewTest(TestCase):
 
     def setUp(self):
@@ -15,11 +16,12 @@ class BaseViewTest(TestCase):
 
 
 class ChannelListViewSetTest(BaseViewTest):
-    
+
     def test_list_channels(self):
         response = self.client.get('/api/channels/')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(len(response.data), 1)
+
 
 class ChannelListCategoriesViewSetTest(BaseViewTest):
 
@@ -27,6 +29,7 @@ class ChannelListCategoriesViewSetTest(BaseViewTest):
         response = self.client.get('/api/channel-categories/test/')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(len(response.data[0]), 2)
+
 
 class CategoriesViewTest(BaseViewTest):
 

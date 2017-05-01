@@ -11,6 +11,7 @@ class Channel(models.Model):
     def __str__(self):
         return self.name
 
+
 class Category(MPTTModel):
     parent = TreeForeignKey('self', null=True, blank=True,
                             db_index=True, default=None,

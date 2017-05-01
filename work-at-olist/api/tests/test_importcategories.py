@@ -46,7 +46,7 @@ class ImportCategoriesTest(TestCase):
             "Games / XBOX One / Accessories",
             "Games / Playstation 4",
         ]
-        
+
     def test_import_categories(self):
         csv_file = create_tempcsv_file(self.categories)
         args = ['test_channel', csv_file]
@@ -61,7 +61,7 @@ class ImportCategoriesTest(TestCase):
         self.assertIsNotNone(channel)
         channel_categories = models.Category.objects.filter(channel=channel)
         self.assertEqual(channel_categories.count(), len(self.categories))
-    
+
     def test_reimport_categories(self):
         csv_file = create_tempcsv_file(self.categories)
         args = ['test_channel', csv_file]
